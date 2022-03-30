@@ -1,0 +1,8 @@
+{
+  "coefficient": {
+    "GaussianianKernel":3,
+    "GaussianKernelforword": 5,
+    "MorphClose": 1,
+    "swell_numpy": 7
+  }
+}
