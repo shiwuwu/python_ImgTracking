@@ -3,6 +3,7 @@
     "GaussianianKernel":3,
     "GaussianKernelforword": 5,
     "MorphClose": 1,
-    "swell_numpy": 7
+    "swell_numpy": 7,
+    "timeF": 10000000
   }
 }

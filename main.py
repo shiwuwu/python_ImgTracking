@@ -1,16 +1,29 @@
-# This is a sample Python script.
+import cv2
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# 使用opencv按一定间隔截取视频帧，并保存为图片
 
+vc = cv2.VideoCapture('./1.mp4')  # 读取视频文件
+c = 0
+print("------------")
+if vc.isOpened():  # 判断是否正常打开
+    print("yes")
+    rval, frame = vc.read()
+else:
+    rval = False
+    print("false")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-    return 0
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('你好')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+timeF = 10 # 视频帧计数间隔频率
+try:
+    while rval:  # 循环读取视频帧
+        rval,frame = vc.read()
+        print(c,timeF,c%timeF)
+        if (c % timeF == 0):# 每隔timeF帧进行存储操作
+            print("write...")
+            cv2.imwrite('./jpg/' + str(c)+ '.jpg', frame)  # 存储为图像
+            print("success!")
+        c = c + 100000
+    cv2.waitKey(1)
+    vc.release()
+except:
+    pass
+print("==================================")
