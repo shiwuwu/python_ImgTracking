@@ -1,9 +1,11 @@
 {
   "coefficient": {
+    "ocr_path": "",
     "GaussianianKernel":3,
     "GaussianKernelforword": 5,
     "MorphClose": 1,
-    "swell_numpy": 7,
-    "time_frame": 100
+    "time_frame": 100,
+    "Zoom" :8,
+    "Width": 7
   }
 }
